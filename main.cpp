@@ -172,7 +172,7 @@ void playSequencer(double tempo)
 double bpmToMs(double tempo)
 {
 	ignoreUnused();
-	return 60*1000/tempo;
+	return 60*1000 / tempo;
 }
 /*
  10)
