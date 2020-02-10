@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h> 
 
 template<typename ...T>
 void ignoreUnused(T&&...) { }
@@ -73,9 +74,9 @@ void variableDeclarations()
 	bool hasDonut = false;
 	bool enjoysTheExercises = true;
 	
-	char index = "a";
-	char currentLettter = "h";
-	char randomLetter = "M";
+	char index = 'a';
+	char currentLettter = 'h';
+	char randomLetter = 'M';
     
     
     
@@ -107,6 +108,9 @@ float calculateDistanceToDonut(float currentPosX, float currentPosY)
 /*
  2)
  */
+//extra variable to make the code compile :)
+int donutsAvailableForPurchase;
+int currentDonuts;
 void buyDonuts(unsigned int donutsWanted)
 {
 	if(donutsAvailableForPurchase>=donutsWanted)
@@ -125,10 +129,11 @@ bool canEatDonut()
 /*
  4)
  */
-bool overEat(int donutsEaten, double stomachVolume, float donutVolume = 0.15f;)
+int stomachSize; // more of those
+bool overEat(int donutsEaten, double stomachVolume, float donutVolume = 0.15f)
 {
 	ignoreUnused();	//???
-	if(donutsEaten*donatVolume>stomachSize)
+	if(donutsEaten*donutVolume>stomachSize)
 		return true;
 	else return false;
 }
@@ -143,17 +148,18 @@ int donutsEatenThisYear(int donutsEatenMontly, int currentMonth)
 /*
  6)
  */
+char alphabet[36]; // i think this is the last one
 char findLetterInAlphabet(int letterNumber, int alphabetLength)
 {
 	ignoreUnused();
 	if(letterNumber<alphabetLength)
 		return alphabet[letterNumber];
-	else return "!";
+	else return printf("!");
 }
 /*
  7)
  */
-float calculateHypothenuse(float sideA, float SideB)
+float calculateHypothenuse(float sideA, float sideB)
 {
 	ignoreUnused();
 	return sqrt((sideA*sideA)+(sideB*sideB));
@@ -177,11 +183,12 @@ double bpmToMs(double tempo)
 /*
  10)
  */
+int currentStep;
 void delayStep(int step, double beats, double tempo)
 {
 	if(step = currentStep)
 	{
-		sleep((int)(bmpToMs(tempo)*beats));
+		 //usleep((int)(bpmToMs(tempo)*beats));
 		currentStep++;
 	}	
 }
