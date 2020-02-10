@@ -79,7 +79,7 @@ void variableDeclarations()
 	char randomLetter = 'M';
     
     
-    
+    INFO: this is correctly done.
     ignoreUnused(currentDonuts, donutsWanted, donutsAvailableForPurchase, 
 				temperatureCelsius, AVB, quantityLiters, 
 				dailyCoffee, dailyBeers, dailyWater, 
@@ -101,30 +101,32 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  */
 float calculateDistanceToDonut(float currentPosX, float currentPosY)
 {
-	float distance = currentPosX / (currentPosY * 0.0f); //we don't have many donuts around
+    FIXME please follow the example for what to put in the function body.
+	float distance = currentPosX / (currentPosY * 0.0f); FIXME remove this
 	ignoreUnused(); //Like this? slightly confused about this
-    return distance;
+    return distance; FIXME please follow the example for what to put in the function body.
 }
 /*
  2)
  */
 //extra variable to make the code compile :)
-int donutsAvailableForPurchase;
-int currentDonuts;
+int donutsAvailableForPurchase; FIXME remove this
+int currentDonuts; FIXME remove this
 void buyDonuts(unsigned int donutsWanted)
 {
-	if(donutsAvailableForPurchase>=donutsWanted)
-		currentDonuts+=donutsWanted;
+    FIXME please follow the example for what to put in the function body.
+	if(donutsAvailableForPurchase>=donutsWanted) FIXME remove this
+		currentDonuts+=donutsWanted; FIXME remove this
 	
 	ignoreUnused();	
 }
 /*
  3)
  */
-bool canEatDonut()
+bool canEatDonut() FIXME add parameters.
 {
 	ignoreUnused();	
-	return true;
+	return true;  FIXME please follow the example for what to put in the function body.
 }
 /*
  4)
@@ -132,18 +134,20 @@ bool canEatDonut()
 int stomachSize; // more of those
 bool overEat(int donutsEaten, double stomachVolume, float donutVolume = 0.15f)
 {
+    FIXME please follow the example for what to put in the function body.
 	ignoreUnused();	//???
-	if(donutsEaten*donutVolume>stomachSize)
-		return true;
-	else return false;
-}
+	if(donutsEaten*donutVolume>stomachSize) FIXME remove this
+		return true; FIXME remove this
+	else return false; FIXME remove this
+} 
 /*
  5)
  */
 int donutsEatenThisYear(int donutsEatenMontly, int currentMonth)
 {
-	ignoreUnused();	
-	return donutsEatenMontly*currentMonth;	
+    FIXME please follow the example for what to put in the function body.
+	ignoreUnused();	 
+	return donutsEatenMontly*currentMonth;	 FIXME remove this
 }
 /*
  6)
@@ -151,24 +155,27 @@ int donutsEatenThisYear(int donutsEatenMontly, int currentMonth)
 char alphabet[36]; // i think this is the last one
 char findLetterInAlphabet(int letterNumber, int alphabetLength)
 {
+    FIXME please follow the example for what to put in the function body.
 	ignoreUnused();
-	if(letterNumber<alphabetLength)
-		return alphabet[letterNumber];
-	else return printf("!");
+	if(letterNumber<alphabetLength) FIXME remove this
+		return alphabet[letterNumber]; FIXME remove this
+	else return printf("!"); FIXME remove this
 }
 /*
  7)
  */
 float calculateHypothenuse(float sideA, float sideB)
 {
+    FIXME please follow the example for what to put in the function body.
 	ignoreUnused();
-	return sqrt((sideA*sideA)+(sideB*sideB));
+	return sqrt((sideA*sideA)+(sideB*sideB)); FIXME remove this
 }
 /*
  8)
  */
 void playSequencer(double tempo)
 {
+    FIXME please follow the example for what to put in the function body.
 	//somehow play it
 	ignoreUnused();
 }
@@ -177,8 +184,9 @@ void playSequencer(double tempo)
  */
 double bpmToMs(double tempo)
 {
+    FIXME please follow the example for what to put in the function body.
 	ignoreUnused();
-	return 60*1000 / tempo;
+	return 60*1000 / tempo; FIXME remove this
 }
 /*
  10)
@@ -186,11 +194,12 @@ double bpmToMs(double tempo)
 int currentStep;
 void delayStep(int step, double beats, double tempo)
 {
-	if(step = currentStep)
-	{
+    FIXME please follow the example for what to put in the function body.
+	if(step = currentStep) FIXME remove this
+	{ FIXME remove this
 		 //usleep((int)(bpmToMs(tempo)*beats));
-		currentStep++;
-	}	
+		currentStep++; FIXME remove this
+	}	 FIXME remove this
 }
 
 int main()
