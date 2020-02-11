@@ -57,7 +57,7 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
-    //exercise 2 - ints
+    //ints
     int currentDonuts = 0;
     unsigned int donutsWanted = 7;
     int donutsAvailableForPurchase = 2147483647;
@@ -72,17 +72,17 @@ void variableDeclarations()
     //bools
     bool wantsDonut = true;
     bool hasDonut = false;
-    bool enjoysTheExercises = true;
+    bool enjoysTheExercises = false;
     //chars
     char index = 'a';
     char currentLettter = 'h';
     char randomLetter = 'M';
     
     ignoreUnused(number, currentDonuts, donutsWanted, donutsAvailableForPurchase, 
-				temperatureCelsius, AVB, quantityLiters, 
-				dailyCoffee, dailyBeers, dailyWater, 
-				wantsDonut, hasDonut, enjoysTheExercises, 
-				index, currentLettter, randomLetter); //passing each variable declared to the ignoreUnused() function
+                  temperatureCelsius, AVB, quantityLiters, 
+                  dailyCoffee, dailyBeers, dailyWater, 
+                  wantsDonut, hasDonut, enjoysTheExercises, 
+                  index, currentLettter, randomLetter); //passing each variable declared to the ignoreUnused() function
 }
 
 static int donutsAvailableForPurchase;
@@ -97,7 +97,7 @@ static char alphabet[36];
 bool rentACar(int rentalDuration, int carType = 0)  //function declaration with random number of arguments, arbitrary number of arguments have default value
 { 
     ignoreUnused(rentalDuration, carType); //passing each function parameter to the ignoreUnused() function
-    return {}; //if your function returns something other than void, add 'return {};' at the end of it.
+    return{}; //if your function returns something other than void, add 'return {};' at the end of it.
 } 
 
 /*
@@ -109,6 +109,7 @@ float calculateDistanceToDonut(float currentPosX, float currentPosY)
     ignoreUnused(); 
     return distance;
 }
+
 /*
  2)
  */
@@ -119,6 +120,7 @@ void buyDonuts(int donutsWanted)
 	  
     ignoreUnused();	
 }
+
 /*
  3)
  */
@@ -127,6 +129,7 @@ bool canEatDonut()
     ignoreUnused();	
     return true;
 }
+
 /*
  4)
  */
@@ -137,6 +140,7 @@ bool overEat(int donutsEaten, double stomachVolume, float donutVolume = 0.15f)
 		  return true;
 	  else return false;
 }
+
 /*
  5)
  */
@@ -145,6 +149,7 @@ int donutsEatenThisYear(int donutsEatenMontly, int currentMonth)
 	  ignoreUnused();	
     return donutsEatenMontly * currentMonth;	
 }
+
 /*
  6)
  */
@@ -155,6 +160,7 @@ char findLetterInAlphabet(int letterNumber, int alphabetLength)
       return alphabet[letterNumber];
     else return('!');
 }
+
 /*
  7)
  */
@@ -163,6 +169,7 @@ float calculateHypothenuse(float sideA, float sideB)
     ignoreUnused();
     return sqrt((sideA*sideA) + (sideB*sideB));
 }
+
 /*
  8)
  */
@@ -171,6 +178,7 @@ void playSequencer(double tempo)
     //somehow play it
     ignoreUnused(tempo);
 }
+
 /*
  9)
  */
@@ -179,6 +187,7 @@ double bpmToMs(double tempo)
     ignoreUnused();
     return 60 * 1000 / tempo;
 }
+
 /*
  10)
  */
