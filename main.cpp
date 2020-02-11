@@ -79,13 +79,19 @@ void variableDeclarations()
 	char randomLetter = 'M';
     
     
-    INFO: this is correctly done.
+    
     ignoreUnused(currentDonuts, donutsWanted, donutsAvailableForPurchase, 
 				temperatureCelsius, AVB, quantityLiters, 
 				dailyCoffee, dailyBeers, dailyWater, 
 				wantsDonut, hasDonut, enjoysTheExercises, 
 				index, currentLettter, randomLetter); //passing each variable declared to the ignoreUnused() function
 }
+
+static int donutsAvailableForPurchase;
+static int currentDonuts = 3;
+static int stomachSize = 5; // more of those
+static char alphabet[5] ={'a','e','i','o','u'} ; // i think this is the last one
+static int currentStep = 1;
 /*
  10 functions
  example:
@@ -101,81 +107,69 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  */
 float calculateDistanceToDonut(float currentPosX, float currentPosY)
 {
-    FIXME please follow the example for what to put in the function body.
-	float distance = currentPosX / (currentPosY * 0.0f); FIXME remove this
+	float distance = currentPosX / (currentPosY * 0.0f); //we don't have many donuts around
 	ignoreUnused(); //Like this? slightly confused about this
-    return distance; FIXME please follow the example for what to put in the function body.
+    return distance;
 }
 /*
  2)
  */
-//extra variable to make the code compile :)
-int donutsAvailableForPurchase; FIXME remove this
-int currentDonuts; FIXME remove this
-void buyDonuts(unsigned int donutsWanted)
+void buyDonuts(int donutsWanted)
 {
-    FIXME please follow the example for what to put in the function body.
-	if(donutsAvailableForPurchase>=donutsWanted) FIXME remove this
-		currentDonuts+=donutsWanted; FIXME remove this
+	if(donutsAvailableForPurchase>=donutsWanted)
+		currentDonuts+=donutsWanted;
 	
 	ignoreUnused();	
 }
 /*
  3)
  */
-bool canEatDonut() FIXME add parameters.
+bool canEatDonut()
 {
 	ignoreUnused();	
-	return true;  FIXME please follow the example for what to put in the function body.
+	return true;
 }
 /*
  4)
  */
-int stomachSize; // more of those
 bool overEat(int donutsEaten, double stomachVolume, float donutVolume = 0.15f)
 {
-    FIXME please follow the example for what to put in the function body.
 	ignoreUnused();	//???
-	if(donutsEaten*donutVolume>stomachSize) FIXME remove this
-		return true; FIXME remove this
-	else return false; FIXME remove this
-} 
+	if(donutsEaten*donutVolume>stomachSize)
+		return true;
+	else return false;
+}
 /*
  5)
  */
 int donutsEatenThisYear(int donutsEatenMontly, int currentMonth)
 {
-    FIXME please follow the example for what to put in the function body.
-	ignoreUnused();	 
-	return donutsEatenMontly*currentMonth;	 FIXME remove this
+	ignoreUnused();	
+	return donutsEatenMontly*currentMonth;	
 }
 /*
  6)
  */
-char alphabet[36]; // i think this is the last one
 char findLetterInAlphabet(int letterNumber, int alphabetLength)
 {
-    FIXME please follow the example for what to put in the function body.
 	ignoreUnused();
-	if(letterNumber<alphabetLength) FIXME remove this
-		return alphabet[letterNumber]; FIXME remove this
-	else return printf("!"); FIXME remove this
+	if(letterNumber<alphabetLength)
+		return alphabet[letterNumber];
+	else return ('!');
 }
 /*
  7)
  */
 float calculateHypothenuse(float sideA, float sideB)
 {
-    FIXME please follow the example for what to put in the function body.
 	ignoreUnused();
-	return sqrt((sideA*sideA)+(sideB*sideB)); FIXME remove this
+	return sqrt((sideA*sideA)+(sideB*sideB));
 }
 /*
  8)
  */
 void playSequencer(double tempo)
 {
-    FIXME please follow the example for what to put in the function body.
 	//somehow play it
 	ignoreUnused();
 }
@@ -184,22 +178,20 @@ void playSequencer(double tempo)
  */
 double bpmToMs(double tempo)
 {
-    FIXME please follow the example for what to put in the function body.
 	ignoreUnused();
-	return 60*1000 / tempo; FIXME remove this
+	return 60*1000 / tempo;
 }
 /*
  10)
  */
-int currentStep;
+
 void delayStep(int step, double beats, double tempo)
 {
-    FIXME please follow the example for what to put in the function body.
-	if(step = currentStep) FIXME remove this
-	{ FIXME remove this
+	if(step == currentStep)
+	{
 		 //usleep((int)(bpmToMs(tempo)*beats));
-		currentStep++; FIXME remove this
-	}	 FIXME remove this
+		currentStep++;
+	}	
 }
 
 int main()
@@ -213,7 +205,7 @@ int main()
 	bool sick = overEat(5, 1);
 	int donutsLeft = 10000 - donutsEatenThisYear(0, 1);	
 	char letter = findLetterInAlphabet(4,36);
-	float hypothenuse = calculateHypothenuse(123.411, 13.63);
+	float hypothenuse = calculateHypothenuse(123.411f, 13.63f);
 	playSequencer(140);
 	double barTime = bpmToMs(140);
 	delayStep(13,0.5, 140);
