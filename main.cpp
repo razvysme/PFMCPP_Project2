@@ -57,30 +57,30 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
+    //exercise 2
+    int currentDonuts = 0;
+    unsigned int donutsWanted = 7;
+    int donutsAvailableForPurchase = 2147483647;
 
-	int currentDonuts = 0;
-	unsigned int donutsWanted = 7;
-	int donutsAvailableForPurchase = 2147483647;
-
-	float temperatureCelsius = 6.7f;
-	float AVB = 5.5f;
-	float quantityLiters = 0.5;
-	
-	double dailyCoffee = 2.5; 	//cups
-	double dailyWater = 2.5; 	//cups
-	double dailyBeers = 0.7;	//bottles
-	
-	bool wantsDonut = true;
-	bool hasDonut = false;
-	bool enjoysTheExercises = true;
-	
-	char index = 'a';
-	char currentLettter = 'h';
-	char randomLetter = 'M';
+    float temperatureCelsius = 6.7f;
+    float AVB = 5.5f;
+    float quantityLiters = 0.5;
+    
+    double dailyCoffee = 2.5; 	//cups
+    double dailyWater = 2.5; 	//cups
+    double dailyBeers = 0.7;	//bottles
+    
+    bool wantsDonut = true;
+    bool hasDonut = false;
+    bool enjoysTheExercises = true;
+    
+    char index = 'a';
+    char currentLettter = 'h';
+    char randomLetter = 'M';
     
     
     
-    ignoreUnused(currentDonuts, donutsWanted, donutsAvailableForPurchase, 
+    ignoreUnused(number, currentDonuts, donutsWanted, donutsAvailableForPurchase, 
 				temperatureCelsius, AVB, quantityLiters, 
 				dailyCoffee, dailyBeers, dailyWater, 
 				wantsDonut, hasDonut, enjoysTheExercises, 
@@ -107,8 +107,8 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  */
 float calculateDistanceToDonut(float currentPosX, float currentPosY)
 {
-	float distance = currentPosX / (currentPosY * 0.0f); //we don't have many donuts around
-	ignoreUnused(); //Like this? slightly confused about this
+	  float distance = currentPosX / (currentPosY * 0.0f); //we don't have many donuts around
+    ignoreUnused(); //Like this? slightly confused about this
     return distance;
 }
 /*
@@ -116,70 +116,70 @@ float calculateDistanceToDonut(float currentPosX, float currentPosY)
  */
 void buyDonuts(int donutsWanted)
 {
-	if(donutsAvailableForPurchase>=donutsWanted)
+	  if(donutsAvailableForPurchase>=donutsWanted)
 		currentDonuts+=donutsWanted;
 	
-	ignoreUnused();	
+	  ignoreUnused();	
 }
 /*
  3)
  */
 bool canEatDonut()
 {
-	ignoreUnused();	
-	return true;
+    ignoreUnused();	
+    return true;
 }
 /*
  4)
  */
 bool overEat(int donutsEaten, double stomachVolume, float donutVolume = 0.15f)
 {
-	ignoreUnused();	//???
-	if(donutsEaten*donutVolume>stomachSize)
+	  ignoreUnused(stomachVolume);	//???
+    if(donutsEaten*donutVolume>stomachSize)
 		return true;
-	else return false;
+	  else return false;
 }
 /*
  5)
  */
 int donutsEatenThisYear(int donutsEatenMontly, int currentMonth)
 {
-	ignoreUnused();	
-	return donutsEatenMontly*currentMonth;	
+	  ignoreUnused();	
+    return donutsEatenMontly*currentMonth;	
 }
 /*
  6)
  */
 char findLetterInAlphabet(int letterNumber, int alphabetLength)
 {
-	ignoreUnused();
-	if(letterNumber<alphabetLength)
-		return alphabet[letterNumber];
-	else return ('!');
+    ignoreUnused();
+    if(letterNumber<alphabetLength)
+      return alphabet[letterNumber];
+    else return ('!');
 }
 /*
  7)
  */
 float calculateHypothenuse(float sideA, float sideB)
 {
-	ignoreUnused();
-	return sqrt((sideA*sideA)+(sideB*sideB));
+    ignoreUnused();
+    return sqrt((sideA*sideA)+(sideB*sideB));
 }
 /*
  8)
  */
 void playSequencer(double tempo)
 {
-	//somehow play it
-	ignoreUnused();
+    //somehow play it
+    ignoreUnused(tempo);
 }
 /*
  9)
  */
 double bpmToMs(double tempo)
 {
-	ignoreUnused();
-	return 60*1000 / tempo;
+    ignoreUnused();
+    return 60*1000 / tempo;
 }
 /*
  10)
@@ -187,7 +187,8 @@ double bpmToMs(double tempo)
 
 void delayStep(int step, double beats, double tempo)
 {
-	if(step == currentStep)
+	ignoreUnused(tempo,beats);
+  if(step == currentStep)
 	{
 		 //usleep((int)(bpmToMs(tempo)*beats));
 		currentStep++;
@@ -197,19 +198,19 @@ void delayStep(int step, double beats, double tempo)
 int main()
 {
     //example of calling that function
-    rentACar(6, 2); 
+    rentACar(6, 2);     
+    calculateDistanceToDonut(13.5f, 22.631f);
+    buyDonuts(7);
+    bool donutCraving = canEatDonut();
+    bool sick = overEat(5, 1);
+    int donutsLeft = 10000 - donutsEatenThisYear(0, 1);	
+    char letter = findLetterInAlphabet(4,36);
+    float hypothenuse = calculateHypothenuse(123.411f, 13.63f);
+    playSequencer(140);
+    double barTime = bpmToMs(140);
+    delayStep(13,0.5, 140);
     
-	calculateDistanceToDonut(13.5f, 22.631f);
-	buyDonuts(7);
-	bool donutCraving = canEatDonut();
-	bool sick = overEat(5, 1);
-	int donutsLeft = 10000 - donutsEatenThisYear(0, 1);	
-	char letter = findLetterInAlphabet(4,36);
-	float hypothenuse = calculateHypothenuse(123.411f, 13.63f);
-	playSequencer(140);
-	double barTime = bpmToMs(140);
-	delayStep(13,0.5, 140);
-    
+    ignoreUnused(barTime, donutCraving, letter, donutsLeft, hypothenuse, sick);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
