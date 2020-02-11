@@ -57,28 +57,26 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
-    //exercise 2
+    //exercise 2 - ints
     int currentDonuts = 0;
     unsigned int donutsWanted = 7;
     int donutsAvailableForPurchase = 2147483647;
-
+    //floats
     float temperatureCelsius = 6.7f;
     float AVB = 5.5f;
     float quantityLiters = 0.5;
-    
+    //doubles
     double dailyCoffee = 2.5; 	//cups
     double dailyWater = 2.5; 	//cups
     double dailyBeers = 0.7;	//bottles
-    
+    //bools
     bool wantsDonut = true;
     bool hasDonut = false;
     bool enjoysTheExercises = true;
-    
+    //chars
     char index = 'a';
     char currentLettter = 'h';
     char randomLetter = 'M';
-    
-    
     
     ignoreUnused(number, currentDonuts, donutsWanted, donutsAvailableForPurchase, 
 				temperatureCelsius, AVB, quantityLiters, 
@@ -88,10 +86,10 @@ void variableDeclarations()
 }
 
 static int donutsAvailableForPurchase;
-static int currentDonuts = 3;
-static int stomachSize = 5; // more of those
-static char alphabet[5] ={'a','e','i','o','u'} ; // i think this is the last one
-static int currentStep = 1;
+static int currentDonuts;
+static int stomachSize;
+static int currentStep;
+static char alphabet[36]; 
 /*
  10 functions
  example:
@@ -108,7 +106,7 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 float calculateDistanceToDonut(float currentPosX, float currentPosY)
 {
 	  float distance = currentPosX / (currentPosY * 0.0f); //we don't have many donuts around
-    ignoreUnused(); //Like this? slightly confused about this
+    ignoreUnused(); 
     return distance;
 }
 /*
@@ -116,10 +114,10 @@ float calculateDistanceToDonut(float currentPosX, float currentPosY)
  */
 void buyDonuts(int donutsWanted)
 {
-	  if(donutsAvailableForPurchase>=donutsWanted)
-		currentDonuts+=donutsWanted;
-	
-	  ignoreUnused();	
+	  if(donutsAvailableForPurchase >= donutsWanted)
+		  currentDonuts += donutsWanted;
+	  
+    ignoreUnused();	
 }
 /*
  3)
@@ -134,9 +132,9 @@ bool canEatDonut()
  */
 bool overEat(int donutsEaten, double stomachVolume, float donutVolume = 0.15f)
 {
-	  ignoreUnused(stomachVolume);	//???
+	  ignoreUnused(stomachVolume); 
     if(donutsEaten*donutVolume>stomachSize)
-		return true;
+		  return true;
 	  else return false;
 }
 /*
@@ -145,7 +143,7 @@ bool overEat(int donutsEaten, double stomachVolume, float donutVolume = 0.15f)
 int donutsEatenThisYear(int donutsEatenMontly, int currentMonth)
 {
 	  ignoreUnused();	
-    return donutsEatenMontly*currentMonth;	
+    return donutsEatenMontly * currentMonth;	
 }
 /*
  6)
@@ -153,9 +151,9 @@ int donutsEatenThisYear(int donutsEatenMontly, int currentMonth)
 char findLetterInAlphabet(int letterNumber, int alphabetLength)
 {
     ignoreUnused();
-    if(letterNumber<alphabetLength)
+    if(letterNumber < alphabetLength)
       return alphabet[letterNumber];
-    else return ('!');
+    else return('!');
 }
 /*
  7)
@@ -163,7 +161,7 @@ char findLetterInAlphabet(int letterNumber, int alphabetLength)
 float calculateHypothenuse(float sideA, float sideB)
 {
     ignoreUnused();
-    return sqrt((sideA*sideA)+(sideB*sideB));
+    return sqrt((sideA*sideA) + (sideB*sideB));
 }
 /*
  8)
@@ -179,7 +177,7 @@ void playSequencer(double tempo)
 double bpmToMs(double tempo)
 {
     ignoreUnused();
-    return 60*1000 / tempo;
+    return 60 * 1000 / tempo;
 }
 /*
  10)
@@ -187,7 +185,7 @@ double bpmToMs(double tempo)
 
 void delayStep(int step, double beats, double tempo)
 {
-	ignoreUnused(tempo,beats);
+	ignoreUnused(tempo, beats);
   if(step == currentStep)
 	{
 		 //usleep((int)(bpmToMs(tempo)*beats));
@@ -208,7 +206,7 @@ int main()
     float hypothenuse = calculateHypothenuse(123.411f, 13.63f);
     playSequencer(140);
     double barTime = bpmToMs(140);
-    delayStep(13,0.5, 140);
+    delayStep(13, 0.5, 140);
     
     ignoreUnused(barTime, donutCraving, letter, donutsLeft, hypothenuse, sick);
     std::cout << "good to go!" << std::endl;
