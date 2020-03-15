@@ -85,11 +85,7 @@ void variableDeclarations()
                   index, currentLettter, randomLetter); //passing each variable declared to the ignoreUnused() function
 }
 
-static int donutsAvailableForPurchase;
-static int currentDonuts;
-static int stomachSize;
-static int currentStep;
-static char alphabet[36]; 
+
 /*
  10 functions
  example:
@@ -105,9 +101,9 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  */
 float calculateDistanceToDonut(float currentPosX, float currentPosY)
 {
-	  float distance = currentPosX / (currentPosY * 0.0f); //we don't have many donuts around
     ignoreUnused(); 
-    return distance;
+    return sqrt(currentPosX*currentPosX + currentPosY*currentPosY);
+  
 }
 
 /*
@@ -115,10 +111,7 @@ float calculateDistanceToDonut(float currentPosX, float currentPosY)
  */
 void buyDonuts(int donutsWanted)
 {
-	  if(donutsAvailableForPurchase >= donutsWanted)
-		  currentDonuts += donutsWanted;
-	  
-    ignoreUnused();	
+    ignoreUnused(donutsWanted);	
 }
 
 /*
@@ -135,10 +128,10 @@ bool canEatDonut()
  */
 bool overEat(int donutsEaten, double stomachVolume, float donutVolume = 0.15f)
 {
-	  ignoreUnused(stomachVolume); 
-    if(donutsEaten*donutVolume>stomachSize)
-		  return true;
-	  else return false;
+    ignoreUnused(donutsEaten, stomachVolume, donutVolume); 
+    //if(donutsEaten*donutVolume>stomachSize)
+    return true;
+    //else return false;
 }
 
 /*
@@ -146,7 +139,7 @@ bool overEat(int donutsEaten, double stomachVolume, float donutVolume = 0.15f)
  */
 int donutsEatenThisYear(int donutsEatenMontly, int currentMonth)
 {
-	  ignoreUnused();	
+    ignoreUnused();	
     return donutsEatenMontly * currentMonth;	
 }
 
@@ -155,10 +148,8 @@ int donutsEatenThisYear(int donutsEatenMontly, int currentMonth)
  */
 char findLetterInAlphabet(int letterNumber, int alphabetLength)
 {
-    ignoreUnused();
-    if(letterNumber < alphabetLength)
-      return alphabet[letterNumber];
-    else return('!');
+    ignoreUnused(letterNumber, alphabetLength);
+    return 'A';
 }
 
 /*
@@ -194,12 +185,7 @@ double bpmToMs(double tempo)
 
 void delayStep(int step, double beats, double tempo)
 {
-	ignoreUnused(tempo, beats);
-  if(step == currentStep)
-	{
-		 //usleep((int)(bpmToMs(tempo)*beats));
-		currentStep++;
-	}	
+    ignoreUnused(step, tempo, beats);
 }
 
 int main()
