@@ -93,7 +93,7 @@ void variableDeclarations()
 bool rentACar(int rentalDuration, int carType = 0)  //function declaration with random number of arguments, arbitrary number of arguments have default value
 { 
     ignoreUnused(rentalDuration, carType); //passing each function parameter to the ignoreUnused() function
-    return{}; //if your function returns something other than void, add 'return {};' at the end of it.
+    return { }; //if your function returns something other than void, add 'return {};' at the end of it.
 } 
 
 /*
@@ -101,9 +101,8 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  */
 float calculateDistanceToDonut(float currentPosX, float currentPosY)
 {
-    ignoreUnused(); 
-    return sqrt(currentPosX*currentPosX + currentPosY*currentPosY);
-  
+    ignoreUnused(currentPosX, currentPosY); 
+    return { };
 }
 
 /*
@@ -119,8 +118,7 @@ void buyDonuts(int donutsWanted)
  */
 bool canEatDonut()
 {
-    ignoreUnused();	
-    return true;
+    return { };
 }
 
 /*
@@ -129,9 +127,7 @@ bool canEatDonut()
 bool overEat(int donutsEaten, double stomachVolume, float donutVolume = 0.15f)
 {
     ignoreUnused(donutsEaten, stomachVolume, donutVolume); 
-    //if(donutsEaten*donutVolume>stomachSize)
-    return true;
-    //else return false;
+    return { };
 }
 
 /*
@@ -139,8 +135,8 @@ bool overEat(int donutsEaten, double stomachVolume, float donutVolume = 0.15f)
  */
 int donutsEatenThisYear(int donutsEatenMontly, int currentMonth)
 {
-    ignoreUnused();	
-    return donutsEatenMontly * currentMonth;	
+    ignoreUnused(donutsEatenMontly, currentMonth);	
+    return { };	
 }
 
 /*
@@ -149,7 +145,7 @@ int donutsEatenThisYear(int donutsEatenMontly, int currentMonth)
 char findLetterInAlphabet(int letterNumber, int alphabetLength)
 {
     ignoreUnused(letterNumber, alphabetLength);
-    return 'A';
+    return { };
 }
 
 /*
@@ -157,8 +153,8 @@ char findLetterInAlphabet(int letterNumber, int alphabetLength)
  */
 float calculateHypothenuse(float sideA, float sideB)
 {
-    ignoreUnused();
-    return sqrt((sideA*sideA) + (sideB*sideB));
+    ignoreUnused(sideA, sideB);
+    return { };
 }
 
 /*
@@ -166,7 +162,6 @@ float calculateHypothenuse(float sideA, float sideB)
  */
 void playSequencer(double tempo)
 {
-    //somehow play it
     ignoreUnused(tempo);
 }
 
@@ -175,8 +170,8 @@ void playSequencer(double tempo)
  */
 double bpmToMs(double tempo)
 {
-    ignoreUnused();
-    return 60 * 1000 / tempo;
+    ignoreUnused(tempo);
+    return { };
 }
 
 /*
@@ -191,7 +186,7 @@ void delayStep(int step, double beats, double tempo)
 int main()
 {
     //example of calling that function
-    rentACar(6, 2);     
+    auto rented = rentACar(6, 2);     
     calculateDistanceToDonut(13.5f, 22.631f);
     buyDonuts(7);
     bool donutCraving = canEatDonut();
@@ -203,7 +198,7 @@ int main()
     double barTime = bpmToMs(140);
     delayStep(13, 0.5, 140);
     
-    ignoreUnused(barTime, donutCraving, letter, donutsLeft, hypothenuse, sick);
+    ignoreUnused(barTime, donutCraving, letter, donutsLeft, hypothenuse, sick, rented);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
